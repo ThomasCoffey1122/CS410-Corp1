@@ -36,10 +36,10 @@ a:hover, a:focus {
 }
 
 .site-header h1 {
-    font-size: 2rem; /* Slightly larger for better visibility */
+    font-size: 2rem;
     color: var(--umass-black);
-    margin: 0; /* Removes default margin for consistency */
-    padding: 8px 0; /* Adds vertical padding for better spacing */
+    margin: 0;
+    padding: 8px 0;
 }
 
 /* Card Styles */
@@ -48,57 +48,57 @@ a:hover, a:focus {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
     margin: 16px;
-    padding: 24px; /* Increased padding for better spacing */
+    padding: 24px;
     display: flex;
-    flex-direction: column; /* Aligns content in a column */
-    justify-content: space-between; /* Distributes space around items */
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .card h2 {
     font-size: 1.5rem;
     color: var(--umass-black);
-    margin: 0 0 16px 0; /* Consistent margin for headings */
+    margin: 0 0 16px 0;
 }
 
 .card p, .card a {
-    font-size: 1rem; /* Ensures consistent font size */
-    line-height: 1.6; /* Improved readability */
-    margin: 0 0 8px 0; /* Consistent margin for paragraphs and links */
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0 0 8px 0;
 }
 
 /* Ensures that the text within the cards is aligned */
 .card .location-info, .card .github-container, .card ul {
-    width: 100%; /* Utilizes full width of the card */
+    width: 100%;
 }
 
 /* Main Container and Grid */
 .container {
     display: flex;
     justify-content: space-between;
-    flex-wrap: nowrap; /* Prevents wrapping to ensure a single line */
+    flex-wrap: nowrap;
     padding: 16px;
 }
 
 .location-card, .students-card {
-    width: calc(30% - 32px); /* Adjust the width as per the new requirement */
+    width: calc(30% - 32px);
     margin: 16px;
 }
 
 .main-content {
-    width: calc(40% - 32px); /* Adjust the width as per the new requirement */
+    width: calc(40% - 32px);
     margin: 16px;
 }
 
 /* Typography and Icons */
 .material-icons {
-    font-size: 24px; /* Consistent icon size */
-    margin-right: 8px; /* Space between icon and text */
+    font-size: 24px;
+    margin-right: 8px;
 }
 
 /* List Styles */
 .students-card ul {
     list-style-type: none;
-    padding-left: 0; /* Removes padding for consistency */
+    padding-left: 0;
 }
 
 .students-card li {
@@ -112,15 +112,15 @@ a:hover, a:focus {
 
 /* University Links */
 .location-card .umass-link {
-    display: block; /* Forces each link onto a new line */
-    margin-bottom: 8px; /* Spacing between university links */
+    display: block;
+    margin-bottom: 8px;
 }
 
 /* GitHub Link Style */
 .github-link {
-    display: block; /* Ensures the GitHub link is centered on its own line */
-    text-align: center; /* Centers the GitHub link text */
-    margin-top: auto; /* Pushes the link to the bottom of the card */
+    display: block;
+    text-align: center;
+    margin-top: auto;
 }
 
 /* Responsive Design */
@@ -131,14 +131,14 @@ a:hover, a:focus {
     }
 
     .location-card, .main-content, .students-card {
-        width: 100%; /* Full width on smaller screens for better readability */
+        width: 100%;
         margin: 16px 0;
     }
 }
 
 /* Make only text selectable */
 body {
-    -webkit-user-select: text; /* Chrome, Safari, Opera */
+    -webkit-user-select: text; /* Safari */
     -moz-user-select: text; /* Firefox */
     -ms-user-select: text; /* IE/Edge */
     user-select: text; /* Standard syntax */
