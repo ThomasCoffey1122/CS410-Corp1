@@ -1,10 +1,10 @@
 /* Color Variables */
 :root {
-    --umass-blue: #0077C8; /* UMass Blue for primary elements */
-    --umass-black: #231F20; /* UMass Black for text and icons */
-    --umass-white: #ffffff; /* UMass White for backgrounds */
-    --background-grey: #F5F5F5; /* Grey for page background */
-    --link-hover-color: #005B9F; /* Darker UMass Blue for link hover state */
+    --umass-blue: #0077C8; /* Primary element color */
+    --umass-black: #231F20; /* Primary text color */
+    --umass-white: #ffffff; /* Background color for content areas */
+    --background-grey: #F5F5F5; /* General background color for the page */
+    --link-hover-color: #005B9F; /* Color for links on hover/focus */
 }
 
 /* Base Styles */
@@ -12,26 +12,30 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: var(--background-grey);
-    color: var(--umass-black);
+    background-color: var(--background-grey); /* Uses background color variable */
+    color: var(--umass-black); /* Text color using variable */
+    -webkit-user-select: text; /* Safari */
+    -moz-user-select: text; /* Firefox */
+    -ms-user-select: text; /* IE/Edge */
+    user-select: text; /* Standard syntax */
 }
 
 a {
-    color: var(--umass-blue);
-    text-decoration: none;
-    transition: color 0.3s ease;
+    color: var(--umass-blue); /* Anchor tag color using variable */
+    text-decoration: none; /* Removes underline from links */
+    transition: color 0.3s ease; /* Smooth color transition for hover/focus */
 }
 
 a:hover, a:focus {
-    color: var(--link-hover-color);
-    text-decoration: underline;
+    color: var(--link-hover-color); /* Hover/focus color */
+    text-decoration: underline; /* Adds underline on hover/focus for accessibility */
 }
 
 /* Header Styles */
 .site-header {
-    background-color: var(--umass-white);
+    background-color: var(--umass-white); /* Background color using variable */
     padding: 16px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds shadow for depth */
     text-align: center;
 }
 
@@ -42,16 +46,40 @@ a:hover, a:focus {
     padding: 8px 0;
 }
 
+/* Main Container and Grid */
+.container {
+    display: flex; /* Enables a flexible box layout */
+    justify-content: space-between; /* Spaces items evenly */
+    flex-wrap: nowrap; /* Prevents wrapping of items */
+    padding: 16px; /* Padding inside the container */
+}
+
+.location-card, .students-card {
+    width: calc(30% - 32px);
+    margin: 16px;
+}
+
+.main-content {
+    width: calc(40% - 32px);
+    margin: 16px;
+}
+
 /* Card Styles */
 .card {
-    background-color: var(--umass-white);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-    margin: 16px;
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    background-color: var(--umass-white); /* Ensures consistency in background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Consistent shadowing across cards */
+    border-radius: 4px; /* Rounded corners for modern look */
+    margin: 16px; /* Spacing around cards */
+    padding: 24px; /* Padding inside cards */
+    display: flex; /* Enables flexible layouts inside cards */
+    flex-direction: column; /* Stacks items vertically */
+    justify-content: space-between; /* Aligns items within the card */
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1); /* Smooth transition for hover effect */
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+    transform: scale(1.02); /* Slightly scale the card on hover */
 }
 
 .card h2 {
@@ -66,27 +94,8 @@ a:hover, a:focus {
     margin: 0 0 8px 0;
 }
 
-/* Ensures that the text within the cards is aligned */
 .card .location-info, .card .github-container, .card ul {
-    width: 100%;
-}
-
-/* Main Container and Grid */
-.container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    padding: 16px;
-}
-
-.location-card, .students-card {
-    width: calc(30% - 32px);
-    margin: 16px;
-}
-
-.main-content {
-    width: calc(40% - 32px);
-    margin: 16px;
+    width: 100%; /* Ensures that the text within the cards is aligned */
 }
 
 /* Typography and Icons */
@@ -123,11 +132,11 @@ a:hover, a:focus {
     margin-top: auto;
 }
 
-/* Responsive Design */
+/* Responsive Design adjustments */
 @media (max-width: 768px) {
     .container {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* Stacks items vertically on smaller screens */
+        align-items: center; /* Centers items horizontally */
     }
 
     .location-card, .main-content, .students-card {
@@ -136,15 +145,7 @@ a:hover, a:focus {
     }
 }
 
-/* Make only text selectable */
-body {
-    -webkit-user-select: text; /* Safari */
-    -moz-user-select: text; /* Firefox */
-    -ms-user-select: text; /* IE/Edge */
-    user-select: text; /* Standard syntax */
-}
-
-/* Center Corporation One text and github link */
+/* Centered content for Corporation One section for visual appeal */
 .main-content h2, .main-content .github-link {
     text-align: center;
 }
