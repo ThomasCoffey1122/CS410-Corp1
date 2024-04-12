@@ -1,0 +1,151 @@
+/* Color Variables */
+:root {
+    --umass-blue: #0077C8; /* Primary element color */
+    --umass-black: #231F20; /* Primary text color */
+    --umass-white: #ffffff; /* Background color for content areas */
+    --background-grey: #F5F5F5; /* General background color for the page */
+    --link-hover-color: #005B9F; /* Color for links on hover/focus */
+}
+
+/* Base Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-grey); /* Uses background color variable */
+    color: var(--umass-black); /* Text color using variable */
+    -webkit-user-select: text; /* Safari */
+    -moz-user-select: text; /* Firefox */
+    -ms-user-select: text; /* IE/Edge */
+    user-select: text; /* Standard syntax */
+}
+
+a {
+    color: var(--umass-blue); /* Anchor tag color using variable */
+    text-decoration: none; /* Removes underline from links */
+    transition: color 0.3s ease; /* Smooth color transition for hover/focus */
+}
+
+a:hover, a:focus {
+    color: var(--link-hover-color); /* Hover/focus color */
+    text-decoration: underline; /* Adds underline on hover/focus for accessibility */
+}
+
+/* Header Styles */
+.site-header {
+    background-color: var(--umass-white); /* Background color using variable */
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds shadow for depth */
+    text-align: center;
+}
+
+.site-header h1 {
+    font-size: 2rem;
+    color: var(--umass-black);
+    margin: 0;
+    padding: 8px 0;
+}
+
+/* Main Container and Grid */
+.container {
+    display: flex; /* Enables a flexible box layout */
+    justify-content: space-between; /* Spaces items evenly */
+    flex-wrap: nowrap; /* Prevents wrapping of items */
+    padding: 16px; /* Padding inside the container */
+}
+
+.location-card, .students-card {
+    width: calc(30% - 32px);
+    margin: 16px;
+}
+
+.main-content {
+    width: calc(40% - 32px);
+    margin: 16px;
+}
+
+/* Card Styles */
+.card {
+    background-color: var(--umass-white); /* Ensures consistency in background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Consistent shadowing across cards */
+    border-radius: 4px; /* Rounded corners for modern look */
+    margin: 16px; /* Spacing around cards */
+    padding: 24px; /* Padding inside cards */
+    display: flex; /* Enables flexible layouts inside cards */
+    flex-direction: column; /* Stacks items vertically */
+    justify-content: space-between; /* Aligns items within the card */
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1); /* Smooth transition for hover effect */
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+    transform: scale(1.02); /* Slightly scale the card on hover */
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    color: var(--umass-black);
+    margin: 0 0 16px 0;
+}
+
+.card p, .card a {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0 0 8px 0;
+}
+
+.card .location-info, .card .github-container, .card ul {
+    width: 100%; /* Ensures that the text within the cards is aligned */
+}
+
+/* Typography and Icons */
+.material-icons {
+    font-size: 24px;
+    margin-right: 8px;
+}
+
+/* List Styles */
+.students-card ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.students-card li {
+    padding: 8px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.students-card li:last-child {
+    border-bottom: none;
+}
+
+/* University Links */
+.location-card .umass-link {
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* GitHub Link Style */
+.github-link {
+    display: block;
+    text-align: center;
+    margin-top: auto;
+}
+
+/* Responsive Design adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stacks items vertically on smaller screens */
+        align-items: center; /* Centers items horizontally */
+    }
+
+    .location-card, .main-content, .students-card {
+        width: 100%;
+        margin: 16px 0;
+    }
+}
+
+/* Centered content for Corporation One section for visual appeal */
+.main-content h2, .main-content .github-link {
+    text-align: center;
+}
